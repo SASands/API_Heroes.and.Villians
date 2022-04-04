@@ -1,4 +1,4 @@
-"""hereos_villians_project URL Configuration
+"""hereos_villains_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.urls import path
 
+import super_types
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/supers/', include('supers.urls'))
+    path('api/super_types/', include('super_types.urls'))
+    
+
 ]
