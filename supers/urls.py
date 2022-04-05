@@ -1,8 +1,8 @@
 from django.urls import path
 from . import views
 
-urlpatterns =[
+urlpatterns = [
     path('', views.supers_list),
-    path('api/supers/'),
-    path('api/supers/<int:pk>/')
+    path('api/supers/', views.supers_list),
+    path('api/supers/<int:pk>/', views.supers_list),
 ]

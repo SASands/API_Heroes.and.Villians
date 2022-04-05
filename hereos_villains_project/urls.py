@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 import super_types
+import supers
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
