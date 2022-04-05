@@ -6,7 +6,7 @@ from super_types.models import SuperType
 
 # Create your models here.
 
-class Super(models.Model):
+class Supers(models.Model):
     name = models.CharField(max_length=100)
     alter_ego = models.CharField(max_length=100)
     primary_ability = models.CharField(max_length=255)
