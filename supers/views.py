@@ -15,13 +15,10 @@ def supers_list(request):
     if request.method == 'GET':
         queryset = Supers.objects.all()
         serializer = SupersSerializer(queryset, many=True)
-
         villains = queryset.filter(super_type__type= 'Villain')
         heroes = queryset.filter(super_type__type= 'Hero')
-
         heroes_serialized = SupersSerializer(heroes, many=True)
         villains_serialized = SupersSerializer(villains, many=True)
-
         if request.query_params.get('type') == 'hero':
             # custom_response = heroes_serialized.data
             return Response(heroes_serialized.data, status=status.HTTP_200_OK)    
@@ -30,12 +27,6 @@ def supers_list(request):
             return Response(villains_serialized.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.data, status=status.HTTP_200_OK)
-
-    elif request.method == 'POST':
-        serializer = SupersSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
  
 
 
@@ -87,10 +78,10 @@ def supers_detail(request, pk):
 #         return Response(serializers.data)
 
 
-# @api_view(['Get'])
-# def super_types_list(request):
-#     appending_dict_example = {}
-#     appending_dict_example['']
+@api_view(['Get'])
+def super_types_list(request):
+    appending_dict_example = {}
+    appending_dict_example['']
 
 
 
